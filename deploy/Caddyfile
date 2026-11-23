@@ -1,0 +1,41 @@
+# bizdaoson.uz - Caddy veb-server sozlamasi
+# Serverdagi joyi: /etc/caddy/Caddyfile
+# HTTPS sertifikati (Let's Encrypt) avtomatik olinadi va yangilanadi.
+
+www.bizdaoson.uz {
+	redir https://bizdaoson.uz{uri} permanent
+}
+
+bizdaoson.uz {
+	root * /opt/bizdaoson/site
+	encode zstd gzip
+
+	# Qisqa buyruqlar:  irm bizdaoson.uz/win | iex
+	@skript path /win /diag /yordam /tozalash /yangilash
+	rewrite @skript {path}.ps1
+
+	# PowerShell skriptlari oddiy matn (UTF-8) sifatida beriladi
+	@matn path /win /diag /yordam /tozalash /yangilash *.ps1
+	header @matn {
+		Content-Type "text/plain; charset=utf-8"
+		Cache-Control "no-cache"
+		defer
+	}
+	header /apps.json Cache-Control "no-cache"
+
+	header {
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		-Server
+	}
+
+	file_server
+
+	# Statistika uchun: nechta odam skriptni ishga tushirgani shu yerda ko'rinadi
+	log {
+		output file /var/log/caddy/bizdaoson.log {
+			roll_size 20MiB
+			roll_keep 5
+		}
+	}
+}
