@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "categories": [
+    { "id": "brauzer",   "name": "Brauzerlar" },
+    { "id": "aloqa",     "name": "Aloqa" },
+    { "id": "ofis",      "name": "Ofis va PDF" },
+    { "id": "media",     "name": "Video, audio, o'yin" },
+    { "id": "foydali",   "name": "Foydali dasturlar" },
+    { "id": "usta",      "name": "Usta asboblari" },
+    { "id": "tizim",     "name": "Tizim kutubxonalari" },
+    { "id": "ijod",      "name": "Grafika" },
+    { "id": "dasturchi", "name": "Dasturchilar uchun" }
+  ],
+  "apps": [
+    { "id": "Google.Chrome",            "name": "Google Chrome",   "cat": "brauzer", "desc": "Eng mashhur brauzer" },
+    { "id": "Yandex.Browser",           "name": "Yandex Browser",  "cat": "brauzer", "desc": "Yandex xizmatlari bilan qulay brauzer" },
+    { "id": "Mozilla.Firefox",          "name": "Firefox",         "cat": "brauzer", "desc": "Tez va maxfiylikni himoya qiladi" },
+    { "id": "Opera.Opera",              "name": "Opera",           "cat": "brauzer", "desc": "Ichida bepul VPN bor" },
+    { "id": "Brave.Brave",              "name": "Brave",           "cat": "brauzer", "desc": "Reklamalarni o'zi bloklaydi" },
+
+    { "id": "Telegram.TelegramDesktop", "name": "Telegram",        "cat": "aloqa", "desc": "Telegram kompyuter versiyasi" },
+    { "id": "Zoom.Zoom",                "name": "Zoom",            "cat": "aloqa", "desc": "Video uchrashuv va onlayn darslar" },
+    { "id": "Rakuten.Viber",            "name": "Viber",           "cat": "aloqa", "desc": "Viber kompyuter versiyasi" },
+    { "id": "Microsoft.Teams",          "name": "Microsoft Teams", "cat": "aloqa", "desc": "Ish uchrashuvlari va chat" },
+    { "id": "Discord.Discord",          "name": "Discord",         "cat": "aloqa", "desc": "Ovozli chat va hamjamiyatlar" },
+
+    { "id": "ONLYOFFICE.DesktopEditors",         "name": "ONLYOFFICE",    "cat": "ofis", "desc": "Word, Excel, PowerPoint uchun bepul ofis" },
+    { "id": "TheDocumentFoundation.LibreOffice", "name": "LibreOffice",   "cat": "ofis", "desc": "To'liq bepul ofis to'plami" },
+    { "id": "Kingsoft.WPSOffice",                "name": "WPS Office",    "cat": "ofis", "desc": "MS Office'ga o'xshash ofis" },
+    { "id": "Adobe.Acrobat.Reader.64-bit",       "name": "Adobe Reader",  "cat": "ofis", "desc": "PDF fayllarni o'qish" },
+    { "id": "SumatraPDF.SumatraPDF",             "name": "Sumatra PDF",   "cat": "ofis", "desc": "Juda yengil va tez PDF o'quvchi" },
+    { "id": "Foxit.FoxitReader",                 "name": "Foxit Reader",  "cat": "ofis", "desc": "PDF o'qish va izoh qo'shish" },
+
+    { "id": "VideoLAN.VLC",                        "name": "VLC",          "cat": "media", "desc": "Har qanday videoni ochadi" },
+    { "id": "Daum.PotPlayer",                      "name": "PotPlayer",    "cat": "media", "desc": "Kuchli video pleyer" },
+    { "id": "CodecGuide.K-LiteCodecPack.Standard", "name": "K-Lite Codec", "cat": "media", "desc": "Video kodeklar to'plami" },
+    { "id": "AIMP.AIMP",                           "name": "AIMP",         "cat": "media", "desc": "Musiqa pleyeri" },
+    { "id": "OBSProject.OBSStudio",                "name": "OBS Studio",   "cat": "media", "desc": "Ekranni yozish va jonli efir" },
+    { "id": "Audacity.Audacity",                   "name": "Audacity",     "cat": "media", "desc": "Ovoz yozish va tahrirlash" },
+    { "id": "HandBrake.HandBrake",                 "name": "HandBrake",    "cat": "media", "desc": "Videoni siqish va formatini o'zgartirish" },
+    { "id": "Valve.Steam",                         "name": "Steam",        "cat": "media", "desc": "O'yinlar do'koni" },
+
+    { "id": "7zip.7zip",                  "name": "7-Zip",      "cat": "foydali", "desc": "Bepul arxivator: zip, rar, 7z" },
+    { "id": "RARLab.WinRAR",              "name": "WinRAR",     "cat": "foydali", "desc": "Arxivator (sinov muddati bilan)" },
+    { "id": "voidtools.Everything",       "name": "Everything", "cat": "foydali", "desc": "Fayllarni bir zumda qidirish" },
+    { "id": "Notepad++.Notepad++",        "name": "Notepad++",  "cat": "foydali", "desc": "Kuchli matn muharriri" },
+    { "id": "ShareX.ShareX",              "name": "ShareX",     "cat": "foydali", "desc": "Skrinshot va ekranni yozish" },
+    { "id": "qBittorrent.qBittorrent",    "name": "qBittorrent","cat": "foydali", "desc": "Reklamasiz torrent dastur" },
+    { "id": "Microsoft.PowerToys",        "name": "PowerToys",  "cat": "foydali", "desc": "Windows uchun foydali qo'shimchalar" },
+    { "id": "KeePassXCTeam.KeePassXC",    "name": "KeePassXC",  "cat": "foydali", "desc": "Parollarni xavfsiz saqlash" },
+    { "id": "AnyDesk.AnyDesk",            "name": "AnyDesk",    "cat": "foydali", "desc": "Masofadan ulanish" },
+
+    { "id": "CPUID.CPU-Z",                              "name": "CPU-Z",           "cat": "usta", "desc": "Protsessor, RAM va plata ma'lumotlari" },
+    { "id": "CrystalDewWorld.CrystalDiskInfo",          "name": "CrystalDiskInfo", "cat": "usta", "desc": "Disk sog'lomligini tekshirish" },
+    { "id": "REALiX.HWiNFO",                            "name": "HWiNFO",          "cat": "usta", "desc": "Batafsil apparat ma'lumoti va harorat" },
+    { "id": "GlennDelahoy.SnappyDriverInstallerOrigin", "name": "Snappy Driver",   "cat": "usta", "desc": "Drayverlarni avtomatik o'rnatish" },
+    { "id": "Rufus.Rufus",                              "name": "Rufus",           "cat": "usta", "desc": "Yuklanadigan fleshka yaratish" },
+    { "id": "Ventoy.Ventoy",                            "name": "Ventoy",          "cat": "usta", "desc": "Bitta fleshkaga ko'p ISO" },
+
+    { "id": "Microsoft.VCRedist.2015+.x64",     "name": "Visual C++ (64-bit)", "cat": "tizim", "desc": "Ko'p dastur va o'yinlar uchun kerak" },
+    { "id": "Microsoft.VCRedist.2015+.x86",     "name": "Visual C++ (32-bit)", "cat": "tizim", "desc": "Eski dasturlar uchun kerak" },
+    { "id": "Microsoft.DotNet.DesktopRuntime.8","name": ".NET 8 Desktop",      "cat": "tizim", "desc": ".NET dasturlari uchun" },
+    { "id": "Microsoft.DirectX",                "name": "DirectX",             "cat": "tizim", "desc": "O'yinlar uchun kerak" },
+    { "id": "Oracle.JavaRuntimeEnvironment",    "name": "Java",                "cat": "tizim", "desc": "Java dasturlari uchun" },
+
+    { "id": "GIMP.GIMP.3",       "name": "GIMP",     "cat": "ijod", "desc": "Bepul rasm muharriri (Photoshop o'rniga)" },
+    { "id": "Inkscape.Inkscape", "name": "Inkscape", "cat": "ijod", "desc": "Vektor grafika (CorelDRAW o'rniga)" },
+
+    { "id": "Microsoft.VisualStudioCode", "name": "VS Code",     "cat": "dasturchi", "desc": "Kod muharriri" },
+    { "id": "Git.Git",                    "name": "Git",         "cat": "dasturchi", "desc": "Versiyalarni boshqarish" },
+    { "id": "Python.Python.3.13",         "name": "Python 3.13", "cat": "dasturchi", "desc": "Python dasturlash tili" },
+    { "id": "OpenJS.NodeJS.LTS",          "name": "Node.js LTS", "cat": "dasturchi", "desc": "JavaScript ishga tushirish muhiti" }
+  ],
+  "presets": [
+    {
+      "id": "asosiy", "name": "Asosiy to'plam", "desc": "Har bir kompyuterga kerak bo'ladigan dasturlar",
+      "apps": ["Google.Chrome", "Telegram.TelegramDesktop", "7zip.7zip", "VideoLAN.VLC", "SumatraPDF.SumatraPDF", "Microsoft.VCRedist.2015+.x64", "Microsoft.VCRedist.2015+.x86"]
+    },
+    {
+      "id": "ofis", "name": "Ofis xodimi", "desc": "Hujjatlar, PDF va video uchrashuvlar",
+      "apps": ["Google.Chrome", "Telegram.TelegramDesktop", "ONLYOFFICE.DesktopEditors", "Adobe.Acrobat.Reader.64-bit", "Zoom.Zoom", "7zip.7zip"]
+    },
+    {
+      "id": "talaba", "name": "O'quvchi va talaba", "desc": "O'qish va onlayn darslar uchun",
+      "apps": ["Google.Chrome", "Telegram.TelegramDesktop", "ONLYOFFICE.DesktopEditors", "Zoom.Zoom", "SumatraPDF.SumatraPDF", "VideoLAN.VLC", "7zip.7zip"]
+    },
+    {
+      "id": "oyin", "name": "O'yinchi", "desc": "O'yinlar ishlashi uchun kerakli hamma narsa",
+      "apps": ["Valve.Steam", "Discord.Discord", "Microsoft.DirectX", "Microsoft.VCRedist.2015+.x64", "Microsoft.VCRedist.2015+.x86", "Microsoft.DotNet.DesktopRuntime.8"]
+    },
+    {
+      "id": "usta", "name": "Usta asboblari", "desc": "Diagnostika, drayver va fleshka asboblari",
+      "apps": ["CPUID.CPU-Z", "CrystalDewWorld.CrystalDiskInfo", "REALiX.HWiNFO", "GlennDelahoy.SnappyDriverInstallerOrigin", "Rufus.Rufus", "Ventoy.Ventoy", "7zip.7zip", "voidtools.Everything", "Notepad++.Notepad++"]
+    },
+    {
+      "id": "dasturchi", "name": "Dasturchi", "desc": "Dasturlash uchun asosiy vositalar",
+      "apps": ["Microsoft.VisualStudioCode", "Git.Git", "Python.Python.3.13", "OpenJS.NodeJS.LTS", "Notepad++.Notepad++", "7zip.7zip", "Google.Chrome"]
+    }
+  ]
+}
