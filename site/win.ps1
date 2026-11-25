@@ -43,7 +43,7 @@ param(
     } catch {}
 
     $S = @{
-        Versiya     = '0.1.0'
+        Versiya     = '0.2.0'
         BaseUrl     = 'https://bizdaoson.uz'
         Telegram    = 'https://t.me/isroilovxk'
         Katalog     = $null
@@ -794,6 +794,7 @@ footer{margin:24px 0 8px;text-align:center;color:#6b7280;font-size:13px}a{color:
             Write-Host '   [4]  Barcha dasturlarni yangilash'
             Write-Host '   [5]  Tarmoq va internet'
             Write-Host '   [6]  Masofaviy yordam (usta ulanadi)'
+            Write-Host '   [7]  Fayl yuborish - telefon/kompyuter (brauzerda ochiladi)'
             Write-Host ''
             Write-Host '   [0]  Chiqish'
             switch (Read-Tanlov) {
@@ -803,6 +804,11 @@ footer{margin:24px 0 8px;text-align:center;color:#6b7280;font-size:13px}a{color:
                 '4' { Invoke-Yangilash; Wait-Enter }
                 '5' { Show-TarmoqMenyu }
                 '6' { Install-RustDesk; Wait-Enter }
+                '7' {
+                    Start-Process 'https://fayl.bizdaoson.uz'
+                    Write-Ok 'fayl.bizdaoson.uz brauzerda ochildi. Telefoningizda ham shu manzilni oching.'
+                    Wait-Enter
+                }
                 '0' { return }
             }
         }

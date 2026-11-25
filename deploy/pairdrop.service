@@ -1,0 +1,33 @@
+# PairDrop - fayl.bizdaoson.uz (fleshkasiz fayl yuborish)
+# Serverdagi joyi: /etc/systemd/system/pairdrop.service
+# Kod: /opt/pairdrop (https://github.com/schlagmichdoch/PairDrop, GPL-3.0)
+[Unit]
+Description=PairDrop - fayl.bizdaoson.uz
+After=network.target
+
+[Service]
+Type=simple
+User=pairdrop
+Group=pairdrop
+WorkingDirectory=/opt/pairdrop
+Environment=NODE_ENV=production
+Environment=PORT=3010
+# nginx bitta proksi: haqiqiy IP X-Forwarded-For orqali keladi
+Environment=RATE_LIMIT=1
+# To'g'ridan-to'g'ri (WebRTC) ulanib bo'lmasa, fayl server orqali o'tadi (mobil internet, VPN)
+Environment=WS_FALLBACK=true
+# IPv6 qurilmalar bir /64 tarmoqda bo'lsa, bir-birini ko'radi
+Environment=IPV6_LOCALIZE=4
+ExecStart=/usr/local/lib/nodejs/bin/node server/index.js --localhost-only
+Restart=on-failure
+RestartSec=3
+
+# Xavfsizlik va resurs cheklovlari (server boshqa saytlar bilan umumiy)
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+MemoryMax=250M
+
+[Install]
+WantedBy=multi-user.target

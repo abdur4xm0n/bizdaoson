@@ -20,6 +20,8 @@ irm bizdaoson.uz/win | iex
 | `&([scriptblock]::Create((irm bizdaoson.uz/win))) -Dasturlar "Google.Chrome,7zip.7zip"` | Tanlangan dasturlarni o'rnatadi (saytda tuziladi) |
 | `&([scriptblock]::Create((irm bizdaoson.uz/win))) -Toplam asosiy` | Tayyor to'plamni o'rnatadi |
 
+**Fayl yuborish:** [fayl.bizdaoson.uz](https://fayl.bizdaoson.uz) ([PairDrop](https://github.com/schlagmichdoch/PairDrop)) — kompyuter va telefon o'rtasida brauzer orqali, fleshkasiz. Bir Wi-Fi'dagi qurilmalar bir-birini o'zi ko'radi, boshqa joydagilar kod bilan ulanadi.
+
 ## Tuzilishi
 
 ```
@@ -88,7 +90,8 @@ sudo grep -c '"uri":"/win"' /var/log/caddy/bizdaoson.log
 ## Reja
 
 - [x] **1-bosqich:** sayt, dastur o'rnatish, diagnostika, tozalash, yangilash, tarmoq, masofaviy yordam
-- [ ] **2-bosqich:** fayl yuborish (PairDrop, bir tarmoqda ham, internetda ham), o'z RustDesk serverimiz, diagnostika hisobotini ustaga bir tugma bilan yuborish
+- [x] **2-bosqich (1):** fayl yuborish: fayl.bizdaoson.uz (PairDrop, `deploy/pairdrop.service`, `deploy/nginx-fayl.conf`)
+- [ ] **2-bosqich (2):** o'z RustDesk serverimiz, diagnostika hisobotini ustaga bir tugma bilan yuborish
 - [ ] **3-bosqich:** Telegram bot va arizalar, ko'p kompyuterni boshqarish (MeshCentral), mahalliy dasturlar (E-IMZO va boshqalar)
 
 ## Qoidalar
