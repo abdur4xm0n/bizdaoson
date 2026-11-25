@@ -59,14 +59,24 @@ powershell -ExecutionPolicy Bypass -File .\site\win.ps1 -Diagnostika
 
 ## Serverga joylash (AWS EC2)
 
-1. **EC2 server:** Ubuntu 24.04. *Security group*da 80 va 443 portlarini hamma uchun oching. 22-portni (SSH) faqat o'z IP manzilingizga oching.
+1. **EC2 server:** Amazon Linux 2023 yoki Ubuntu 24.04. *Security group*da 80 va 443 portlarini hamma uchun oching. 22-portni (SSH) faqat o'z IP manzilingizga oching.
 2. **Elastic IP** biriktiring, aks holda server qayta yonganda IP o'zgaradi.
-3. **DNS:** domen panelida `bizdaoson.uz` va `www.bizdaoson.uz` uchun A yozuv qo'shib, server IP manziliga yo'naltiring.
-4. Serverda:
+3. Serverda:
    ```bash
+   sudo dnf install -y git        # faqat Amazon Linux'da (Ubuntu'da git bor)
    sudo git clone https://github.com/abdur4xm0n/bizdaoson.git /opt/bizdaoson
    sudo bash /opt/bizdaoson/deploy/server-sozlash.sh
    ```
+   Shundan keyin sayt IP orqali ochiladi: `http://SERVER_IP` va `irm SERVER_IP/win | iex`.
+
+   **Serverda nginx allaqachon ishlayotgan bo'lsa** (boshqa saytlar bilan umumiy server), skript Caddy o'rnatmasdan to'xtaydi. Bu holda nginx sozlamasini qo'shing:
+   ```bash
+   sudo cp /opt/bizdaoson/deploy/nginx-bizdaoson.conf /etc/nginx/conf.d/bizdaoson.conf
+   sudo nginx -t && sudo systemctl reload nginx
+   ```
+4. **DNS (Cloudflare):** `bizdaoson.uz` va `www` uchun A yozuvni server IP manziliga yo'naltiring.
+   - Caddy bilan: **DNS only** (kulrang bulut). Caddy HTTPS sertifikatini o'zi oladi.
+   - nginx bilan: **Proxied** (to'q sariq bulut), SSL/TLS rejimi **Full**.
 5. Keyingi yangilanishlar uchun: `sudo bash /opt/bizdaoson/deploy/yangilash.sh`
 
 Statistika (skriptni necha marta ishga tushirishgani):

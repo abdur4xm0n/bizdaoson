@@ -2,11 +2,8 @@
 # Serverdagi joyi: /etc/caddy/Caddyfile
 # HTTPS sertifikati (Let's Encrypt) avtomatik olinadi va yangilanadi.
 
-www.bizdaoson.uz {
-	redir https://bizdaoson.uz{uri} permanent
-}
-
-bizdaoson.uz {
+# Umumiy sozlamalar (pastdagi saytlar "import sayt" bilan ishlatadi)
+(sayt) {
 	root * /opt/bizdaoson/site
 	encode zstd gzip
 
@@ -30,12 +27,32 @@ bizdaoson.uz {
 	}
 
 	file_server
+}
 
-	# Statistika uchun: nechta odam skriptni ishga tushirgani shu yerda ko'rinadi
+bizdaoson.uz {
+	import sayt
+
+	# Statistika: nechta odam skriptni ishga tushirgani shu yerda ko'rinadi
 	log {
 		output file /var/log/caddy/bizdaoson.log {
 			roll_size 20MiB
 			roll_keep 5
 		}
 	}
+}
+
+www.bizdaoson.uz {
+	redir https://bizdaoson.uz{uri} permanent
+}
+
+# Domen orqali kelgan oddiy HTTP doim HTTPS'ga yo'naltiriladi.
+# "irm bizdaoson.uz/win" avval http:// bilan so'raydi - skript faqat shifrlangan holda yetib borsin.
+http://bizdaoson.uz, http://www.bizdaoson.uz {
+	redir https://bizdaoson.uz{uri} permanent
+}
+
+# IP manzil yoki lokal tarmoq orqali (oddiy HTTP), masalan:  irm 192.168.1.10/win | iex
+# Domen DNS'i hali ulanmaganda sinash uchun ham qulay.
+:80 {
+	import sayt
 }
